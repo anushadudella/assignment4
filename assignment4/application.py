@@ -199,6 +199,8 @@ class ETL():
             city_url = city.url
             r = requests.get(city_url)
             # 1. Assignment 4 TODO: Check if the city has data available by checking for return code 404
+            if r.status_code == 404:
+                continue
             city_data = r.text
             data_dir = os.getcwd() + "/data"
             os.system("mkdir -p " + data_dir)
@@ -552,9 +554,11 @@ def get_user_cities(dbsession, userid):
 # Return the cities list where every entry will be a city dict of the form [city{'name'}:'Ausitn', city{'name'}: 'Dallas']
 def get_admin_cities(dbsession):
     cities = []
-    city = {}
-    city['name'] = 'CHANGE THIS TO CITY added by ADMIN'
-    cities.append(city)
+    all_cities = dbsession.query(City).all()
+    for c in all_cities:
+        city = {}
+        city['name'] = c.name
+        cities.append(city)
     return cities 
 
 
@@ -605,13 +609,35 @@ def city_status_graph():
 
     app.logger.info("Username:" + username + " City:" + city_name)    
 
+    dbsession = DBSession()
     op = {}
-    op['TODO'] = 'Generate the Expected Output shown above.'
 
+    user = dbsession.query(User).filter_by(name=username).first()
+    if user is None:
+        return json.dumps(op)
 
-    app.logger.info(op)
+    city = dbsession.query(City).filter_by(name=city_name).first()
+    if city is None:
+        return json.dumps(op)
+    
+    usercity = dbsession.query(UserCity).filter_by(userId=user.id, cityId=city.id).first()
+    if usercity is None:
+        return json.dumps(op)
+
+    year = usercity.year
+    month = usercity.month
+    selected_params = usercity.weather_params.split(',')
+
+    for param in selected_params:
+        param = param.strip()
+        key = year + "-" + month + "-" + param
+        wp = dbsession.query(WeatherParameter).filter_by(cityId=city.id, year_month_param=key).first()
+        if wp is not None:
+            op[key] = wp.values
+        else:
+            op[key] = "0"
+    
     return json.dumps(op)
-
 
 ## Not needed
 @app.route("/addcity", methods=['POST','GET'])
@@ -626,6 +652,8 @@ def addcity():
         username = session['username']
 
     user_cities = in_mem_cities
+    admin_cities = get_admin_cities(DBSession())
+    
     return render_template('welcome.html',
             welcome_message = "Personal Weather Portal - Admin Panel",
             status_string="Registered city " + city_name + ".",
@@ -746,16 +774,14 @@ def login():
     # 4. Assignment 4 - Check if user is present
     # If user is not present render_template not-found.html by passing in the username
     dbsession = DBSession()
+
     users = dbsession.query(User).filter_by(name=username)
-    user_cities = []
-    if users.count() > 0:
-        user = users.first()
-        user_cities = get_user_cities(dbsession, user.id)
-
-
-    # 5. Assignment 4 - Return admin_cities
+    if users.count() == 0:
+        return render_template('not-found.html', username=username)
+    
+    user = users.first()
+    user_cities = get_user_cities(dbsession, user.id)
     admin_cities = get_admin_cities(dbsession)
-
 
     return render_template('welcome.html',
             welcome_message = "Personal Weather Portal",
@@ -772,7 +798,6 @@ def login():
 @app.route("/")
 def index():
     return render_template('index.html')
-
 
 
 @app.route("/adminlogin", methods=['POST'])

@@ -149,6 +149,16 @@ function get_city_weather_graphs(city) {
 		count = 1;
 
 		// Assignment 4 Iterate through vals; ignore entries that are "-9999"; convert to decimal (411 -> 41.1)
+		for (var i = 0; i < vals.length; i++) {
+			var v = vals[i].trim();
+			if (v === "-9999") {
+				continue;
+			}
+			var numericVal = parseFloat(v) / 10.0;
+			values.push(numericVal);
+			xaxis_vals.push(count);
+			count++;
+		}
 
 		key1 = key;
 		if (key.includes("TMAX") || key.includes("TMIN")) {

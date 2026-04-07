@@ -29,8 +29,12 @@ app.secret_key = secrets.token_hex()
 # Reviewed documentation for this
 @app.before_request
 def check_user():
-    if 'username' not in session:
-        return(redirect(url_for('index')))
+    allowed = ['index', 'login', 'adminlogin', 'adminindex', 'static',
+               'add_admin', 'get_admins', 'get_admin_by_id', 'delete_admin_by_id',
+               'add_user', 'get_users', 'get_user_by_id', 'delete_user_by_id',
+               'add_city', 'get_cities', 'get_city', 'add_user_city', 'get_city_by_name']
+    if request.endpoint not in allowed and 'username' not in session:
+        return redirect(url_for('index'))
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -67,7 +71,9 @@ dictConfig({
 
 # SQLite Database creation
 Base = declarative_base()
-engine = create_engine("sqlite:///weatherportal.db", echo=True, future=True,connect_args={'check_same_thread': False})
+# Imporing null pool from documentation and tools used (this is supposed to work idk)
+from sqlalchemy.pool import NullPool
+engine = create_engine("sqlite:///weatherportal.db", echo=True, future=True, connect_args={'check_same_thread': False}, poolclass=NullPool)
 DBSession = sessionmaker(bind=engine)
 
 
@@ -214,6 +220,8 @@ class ETL():
             fp.write(city_data)
 
         dbsession = DBSession()
+        # Making the folder mkdir thing
+        os.makedirs(os.getcwd() + "/data", exist_ok=True)
         for filename in os.listdir(os.getcwd() + "/data"):
             print("-------")
             print(filename)

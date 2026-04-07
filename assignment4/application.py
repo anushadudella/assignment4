@@ -25,6 +25,12 @@ app = Flask(__name__)
 
 app.secret_key = secrets.token_hex() 
 
+# Adding the error request thingy so it doesn't error 
+# Reviewed documentation for this
+@app.before_request
+def check_user():
+    if 'username' not in session:
+        return(redirect(url_for('index')))
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
@@ -653,7 +659,7 @@ def addcity():
 
     user_cities = in_mem_cities
     admin_cities = get_admin_cities(DBSession())
-    
+
     return render_template('welcome.html',
             welcome_message = "Personal Weather Portal - Admin Panel",
             status_string="Registered city " + city_name + ".",

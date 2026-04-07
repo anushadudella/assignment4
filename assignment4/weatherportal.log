@@ -1,0 +1,2955 @@
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA temp.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA temp.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA temp.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA temp.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+PRAGMA temp.table_info("weatherparameter")
+[raw sql] ()
+
+CREATE TABLE admin (
+	id INTEGER NOT NULL, 
+	name VARCHAR, 
+	password VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE user (
+	id INTEGER NOT NULL, 
+	name VARCHAR, 
+	password VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE city (
+	id INTEGER NOT NULL, 
+	name VARCHAR, 
+	url VARCHAR, 
+	"adminId" INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("adminId") REFERENCES admin (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE usercity (
+	id INTEGER NOT NULL, 
+	"cityId" INTEGER, 
+	"userId" INTEGER, 
+	year VARCHAR, 
+	month VARCHAR, 
+	weather_params VARCHAR, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("cityId") REFERENCES city (id), 
+	FOREIGN KEY("userId") REFERENCES user (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE weatherparameter (
+	id INTEGER NOT NULL, 
+	year_month_param VARCHAR, 
+	"values" VARCHAR, 
+	"cityId" INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("cityId") REFERENCES city (id)
+)
+
+
+[no key 0.00003s] ()
+COMMIT
+Portal started...
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.228:5009/ (Press CTRL+C to quit)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00022s] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00018s] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.0008377s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001187s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001626s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002049s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002451s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.00284s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.003225s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004233s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004644s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005022s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005429s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005837s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 10.02s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 20.03s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 30.04s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 40.06s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 50.07s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 60.08s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 70.1s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 80.11s ago] ()
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Portal started...
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.228:5009/ (Press CTRL+C to quit)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00026s] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00025s] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001243s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001695s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002174s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002797s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.003273s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.003655s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004029s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005226s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005815s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.006701s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.007434s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.007807s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 10.02s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 20.04s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 30.05s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 40.06s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 50.07s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 60.08s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 70.09s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 80.11s ago] ()
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Portal started...
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.228:5009/ (Press CTRL+C to quit)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00023s] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00022s] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001057s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001519s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001944s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002365s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002746s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.003106s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.003402s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004459s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004883s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005452s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005803s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.006287s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 10.02s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Portal started...
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.228:5009/ (Press CTRL+C to quit)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00016s] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00016s] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.0009982s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001396s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001723s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002146s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002551s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002937s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.003334s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004229s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.00458s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004929s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005253s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005573s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 10.01s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 20.02s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.02s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 30.03s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Dallas', 1, 0)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Portal started...
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.228:5009/ (Press CTRL+C to quit)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00017s] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00018s] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.0009546s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001474s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001974s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002313s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002597s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.00295s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.003266s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004153s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004482s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004797s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.00511s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005429s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 10.02s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 20.03s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 30.04s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 40.06s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.06s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 50.07s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.07s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 60.09s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.08s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.09s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 70.1s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.1s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 80.11s ago] ()
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Portal started...
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on http://192.168.1.228:5009/ (Press CTRL+C to quit)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00027s] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00016s] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.0009242s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001402s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.001832s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002275s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.00271s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.003118s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.003456s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004278s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004485s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004651s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004803s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.004954s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 10.01s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.01s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 10.02s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 20.03s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.03s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 20.04s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 30.05s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 30.05s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 40.06s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.07s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 40.08s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 50.09s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 50.09s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 60.1s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.1s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.1s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.11s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.11s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 60.11s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 70.11s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.11s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.11s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.11s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.11s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.11s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.11s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.11s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.11s ago] ('Austin', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.11s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.11s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.12s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.12s ago] ('Dallas', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 70.12s ago] ('Dallas', 1, 0)
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 80.13s ago] ()

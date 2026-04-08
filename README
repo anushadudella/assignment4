@@ -3,3 +3,4 @@ eid: ad48847
 githubusername: anushadudella
 I used Gemini (AI) and Claude (AI) to help with debugging of code and helping with Git version control issues.
 Notes: I ran all setup commands, waited for ETL to test, and tested browser at http://localhost:5009. Everything seemed to work great, including data visualization graphs, testing user existence or not, sidebar/min/max/and precipitation.
+Thank you so much for taking the time to look over my work! :) 

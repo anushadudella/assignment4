@@ -649,7 +649,7 @@ def city_status_graph():
         if wp is not None:
             op[key] = wp.values
         else:
-            op[key] = "0"
+            op[key] = "0,0,0,0,0,0,0,0,0,0"
     
     return json.dumps(op)
 
@@ -824,9 +824,11 @@ def adminlogin():
     session['username'] = username
 
     user_cities = in_mem_cities
+    admin_cities = get_admin_cities(DBSession())
     return render_template('welcome.html',
             welcome_message = "Personal Weather Portal - Admin Panel",
             cities=user_cities,
+            available_cities=admin_cities,
             name=username,
             addButton_style="display:inline;",
             addCityForm_style="display:inline;",

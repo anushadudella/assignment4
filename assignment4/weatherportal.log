@@ -52247,3 +52247,707 @@ FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_m
 FROM weatherparameter 
 WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
 [cached since 1925s ago] (2, '2023-08-SNOW')
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 1935s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (1, '2023-07-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (1, '2023-07-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (1, '2023-07-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (1, '2023-07-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (1, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (1, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (1, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (1, '2023-08-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (3, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (3, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (3, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (3, '2023-08-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (2, '2023-07-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (2, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (2, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (2, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1935s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1935s ago] (2, '2023-08-SNOW')
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 1945s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (1, '2023-07-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (1, '2023-07-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (1, '2023-07-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (1, '2023-07-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (1, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (1, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (1, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (1, '2023-08-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (3, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (3, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (3, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (3, '2023-08-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (2, '2023-07-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (2, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (2, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (2, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1945s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1945s ago] (2, '2023-08-SNOW')
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 1956s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (1, '2023-07-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (1, '2023-07-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (1, '2023-07-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (1, '2023-07-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (1, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (1, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (1, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (1, '2023-08-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (3, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (3, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (3, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (3, '2023-08-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (2, '2023-07-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (2, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (2, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (2, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1956s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1956s ago] (2, '2023-08-SNOW')
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 1967s ago] ()
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (1, '2023-07-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (1, '2023-07-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (1, '2023-07-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (1, '2023-07-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (1, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (1, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (1, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Austin', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (1, '2023-08-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (3, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (3, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (3, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Houston', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (3, '2023-08-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (2, '2023-07-SNOW')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (2, '2023-08-TMAX')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (2, '2023-08-TMIN')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (2, '2023-08-PRCP')
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 1966s ago] ('Dallas', 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT weatherparameter.id AS weatherparameter_id, weatherparameter.year_month_param AS weatherparameter_year_month_param, weatherparameter."values" AS weatherparameter_values, weatherparameter."cityId" AS "weatherparameter_cityId" 
+FROM weatherparameter 
+WHERE weatherparameter."cityId" = ? AND weatherparameter.year_month_param = ?) AS anon_1
+[cached since 1966s ago] (2, '2023-08-SNOW')
